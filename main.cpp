@@ -16,7 +16,10 @@ void logNewPosition(const Cube &pos)
 	const int total = 4*3*2 * 4*3*2 * 16 * 81 / 4;
 
 	count++;
-	std::cout << "\r[ " << std::fixed << std::setprecision(2) << count * 100.0 / total << "% ] " << count << "/" << total << " positions visited";
+	if(count % 100 == 0)
+	{
+		std::cout << "\r[ " << std::fixed << std::setprecision(2) << count * 100.0 / total << "% ] " << count << "/" << total << " positions visited";
+	}
 }
 
 void exploreStartingAt(Cube &starting_position)
