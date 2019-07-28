@@ -82,13 +82,13 @@ int main()
 	std::cout << solvability_class_count << " classes" << std::endl;
 
 	// Count number of positions in each class. Should be the same for all classes
-	std::vector<int> class_count(solvability_class_count+1);
+	std::vector<int> class_count(solvability_class_count);
 	for(auto it : visited_positions)
 	{
 		class_count[it.second]++;
 	}
 
-	for(int i=1; i<=solvability_class_count; i++)
+	for(int i=0; i<solvability_class_count; i++)
 	{
 		std::cout << "Class " << i << ": " << class_count[i] << " positions" << std::endl;
 	}
